@@ -1,0 +1,64 @@
+{
+  "name": "custom.remote.python.custom_extension_davidlopes",
+  "version": "1.001",
+  "type": "python",
+  "entity": "CUSTOM_DEVICE",
+  "technologies": [
+    "SpaceX"
+  ],
+  "metricGroup": "tech.Custom.DavidLopes",
+  "source": {
+    "package": "custom_extension_davidlopes",
+    "className": "CustomExtensionDavidLopes",
+    "install_requires": [],
+    "activation": "Remote"
+  },
+  "properties": [],
+  "configUI": {
+    "displayName": "David Lopes - Custom Extension",
+    "properties": []
+  },
+  "metrics": [
+    {
+      "entity": "CUSTOM_DEVICE",
+      "timeseries": {
+        "key": "combustivel",
+        "unit": "Count",
+        "displayname": "Combustivel"
+      }
+    }
+  ],
+  "ui": {
+    "keymetrics": [
+      {
+        "key": "combustivel",
+        "displayName": "Custom Metric",
+        "aggregation": "avg"
+      }
+    ],
+    "keycharts": [
+      {
+        "group": "Custom Group",
+        "title": "Custom Title",
+        "series": [
+          {
+            "key": "combustivel",
+            "mergeaggregation": "AVG"
+          }
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "group": "Custom Group",
+        "title": "Custom Title",
+        "series": [
+          {
+            "key": "combustivel",
+            "mergeaggregation": "AVG"
+          }
+        ]
+      }
+    ]
+  }
+}
