@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.custom_extension_davidlopes",
-  "version": "1.005",
+  "version": "1.006",
   "type": "python",
   "entity": "CUSTOM_DEVICE",
   "technologies": [
@@ -39,6 +39,14 @@
         "displayname": "Potencia",
         "dimensions": ["Motor"]
       }
+    },
+        {
+      "entity": "CUSTOM_DEVICE",
+      "statetimeseries": {
+        "key": "clima",
+        "states": ["Fair", "Cloudy", "Sunny", "Rainy", "Stormy", "Snowy", "Windy", "Hail"],
+        "displayname": "Clima"
+      }
     }
   ],
   "ui": {
@@ -55,8 +63,18 @@
         "title": "Custom Title",
         "series": [
           {
-            "key": "combustivel",
-            "mergeaggregation": "AVG"
+            "key": "combustivel"
+          }
+        ]
+      },
+      {
+        "group": "Clima",
+        "title": "Clima",
+        "series": [
+          {
+            "key": "clima",
+            "statecolors": ["#ef651f", "#f5d30f", "#4fd5e0", "#4556d7", "#ffa86c", "#ffa86c", "#ffa86c", "#ffa86c"],
+            "statechart": true
           }
         ]
       }
