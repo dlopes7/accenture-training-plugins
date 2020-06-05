@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.custom_extension_davidlopes",
-  "version": "1.004",
+  "version": "1.005",
   "type": "python",
   "entity": "CUSTOM_DEVICE",
   "technologies": [
@@ -13,10 +13,14 @@
     "install_requires": [],
     "activation": "Remote"
   },
-  "properties": [],
+  "properties": [
+    {"key":  "url", "type":  "String"}
+  ],
   "configUI": {
     "displayName": "David Lopes - Custom Extension",
-    "properties": []
+    "properties": [
+      {"key":  "url", "displayName":  "URL da API do SpaceX", "displayOrder": 1, "displayHint":  "https://spacex.com"}
+    ]
   },
   "metrics": [
     {

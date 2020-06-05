@@ -31,7 +31,7 @@ class CustomExtensionDavidLopes(RemoteBasePlugin):
             device.add_endpoint(navio["ship_ip"])
 
     def get_ships(self):
-        return requests.get("http://ec2-18-207-157-255.compute-1.amazonaws.com/v3/ships").json()
+        return requests.get(f"{self.config['url']}/v3/ships").json()
 
 
 
