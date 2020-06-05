@@ -22,6 +22,9 @@ class CustomExtensionDavidLopes(RemoteBasePlugin):
             device = grupo.create_device(id_navio, nome_navio)
             device.absolute("combustivel", navio["fuel"])
 
+            for motor in navio["thrust"]:
+                device.absolute("potencia", motor["power"], dimensions={"Motor": motor["engine"]})
+
 
     def get_ships(self):
         return requests.get("http://ec2-18-207-157-255.compute-1.amazonaws.com/v3/ships").json()

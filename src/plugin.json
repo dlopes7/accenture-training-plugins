@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.custom_extension_davidlopes",
-  "version": "1.001",
+  "version": "1.003",
   "type": "python",
   "entity": "CUSTOM_DEVICE",
   "technologies": [
@@ -25,6 +25,15 @@
         "key": "combustivel",
         "unit": "Count",
         "displayname": "Combustivel"
+      }
+    },
+    {
+      "entity": "CUSTOM_DEVICE",
+      "timeseries": {
+        "key": "potencia",
+        "unit": "Count",
+        "displayname": "Potencia",
+        "dimensions": ["Motor"]
       }
     }
   ],
@@ -52,10 +61,23 @@
       {
         "group": "Custom Group",
         "title": "Custom Title",
+        "description": "Descricao",
         "series": [
           {
             "key": "combustivel",
-            "mergeaggregation": "AVG"
+            "mergeaggregation": "AVG",
+            "displayName": "Combustivel"
+          }
+        ]
+      },
+      {
+        "group": "Motores",
+        "title": "Potencia dos motores",
+        "description": "Potencia de cada motor",
+        "series": [
+          {
+            "key": "potencia",
+            "displayName": "Potencia"
           }
         ]
       }
