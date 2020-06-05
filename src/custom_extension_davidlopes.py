@@ -25,6 +25,10 @@ class CustomExtensionDavidLopes(RemoteBasePlugin):
             for motor in navio["thrust"]:
                 device.absolute("potencia", motor["power"], dimensions={"Motor": motor["engine"]})
 
+            device.report_property("Tipo", navio.get("ship_type", "Desconhecido"))
+            device.report_property("Porto", navio.get("home_port", "Desconhecido"))
+
+            device.add_endpoint(navio["ship_ip"])
 
     def get_ships(self):
         return requests.get("http://ec2-18-207-157-255.compute-1.amazonaws.com/v3/ships").json()
